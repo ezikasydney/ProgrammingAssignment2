@@ -1,3 +1,6 @@
+
+##makeCacheMatrix creates a special "matrix" object that can cache the input matrix and its inverse
+
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL # sets the value of m to NULL
   setmatrix <- function(y){ #set the value of the matrix
@@ -11,6 +14,8 @@ list(setmatrix=setmatrix, getmatrix=getmatrix, # creates a list to house the fou
    setmatrix=setmatrix,
    getmatrix=getmatrix)
 }
+ ##cacheSolve calls functions stored in the special "matrix" returned by makeCacheMatrix
+ ##If the inverse has already been calculated (and the matrix has not changed), cacheSolve retrieves it
 
 cacheSolve <- function(x=matrix(), ...) {
 	# Need to compare matrix to what was there before 
